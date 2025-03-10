@@ -42,7 +42,7 @@ Apprenez-en plus sur les **démons à queues**, créatures mythiques qui influen
 - ✅ **Pagination** : navigation fluide à travers de nombreuses données.  
 - ✅ **Recherche** : trouvez facilement des personnages, clans ou Kekkei-Genkai.  
 - ✅ **Système de filtres** : filtrez les personnages selon plusieurs critères.  
-- 🚧 **Système de favoris (à venir)** : ajoutez vos personnages et clans préférés.  
+- 🚧 **Système de favoris (à venir)** : ajoutez vos ppersonnages, clans, Kekkei-Genkai, et bijū (démons à queues) préférés.  
 
 ---
 
