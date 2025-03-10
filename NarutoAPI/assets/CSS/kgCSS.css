@@ -1,0 +1,13 @@
+.kg-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.kg-card {
+    text-align: center;
+}
+
+.kg-card h2 {
+    color: #043e8b;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}

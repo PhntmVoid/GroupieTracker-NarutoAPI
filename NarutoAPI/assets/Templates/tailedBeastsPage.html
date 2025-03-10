@@ -1,0 +1,91 @@
+{{define "tailedBeastsPage.html"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Tailed Beasts</title>
+    <link rel="stylesheet" href="/assets/CSS/main.css">
+    <link rel="stylesheet" href="/assets/CSS/tailedBeastsCSS.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=search" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navdiv" id="right-header">
+            <div class="logo">
+                <a href="/"><img src="/assets/images/stickers-logo-naruto-removebg-preview.png" alt="Logo"></a>
+            </div>
+            <div>
+                <ul class="nav-buttons">
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/clans">Clans</a></li>
+                    <li><a href="/kekkei-genkai">Kekkei Genkai</a></li>
+                    <li><a href="/tailed-beasts">Tailed Beasts</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navdiv" id="left-header">
+            <div class="search-bar">
+                <form action="" method="GET">
+                    <input type="search" name="search" placeholder="Search..." value="{{.Query}}">
+                    <button type="submit" class="search-button">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="tb-grid">
+            {{range .TailedBeasts}}
+            <div class="tb-card">
+                <h2>{{.Name}}</h2>
+                {{if .Images}}
+                <img src="{{index .Images 0}}" alt="{{.Name}}" class="tb-image">
+                {{end}}
+                <div class="tb-info">
+                    {{if .Personal.Status}}
+                    <p><strong>Status:</strong> {{.Personal.Status}}</p>
+                    {{end}}
+
+                    {{if .Personal.Classification}}
+                    <p><strong>Classification:</strong> {{.Personal.Classification}}</p>
+                    {{end}}
+
+                    {{if .Personal.Jinchuriki}}
+                    <p><strong>Jinchūriki:</strong> {{range .Personal.Jinchuriki}}{{.}} {{end}}</p>
+                    {{end}}
+
+                    {{if .NatureType}}
+                    <p><strong>Nature Types:</strong> {{range .NatureType}}{{.}} {{end}}</p>
+                    {{end}}
+
+                    {{if .UniqueTraits}}
+                    <p><strong>Unique Traits:</strong> {{range .UniqueTraits}}{{.}} {{end}}</p>
+                    {{end}}
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+        <div class="pagination">
+            {{if gt .CurrentPage 1}}
+            <a href="?page={{subtract .CurrentPage 1}}{{if .Query}}&search={{.Query}}{{end}}">&laquo; Previous</a>
+            {{end}}
+
+            <span>Page {{.CurrentPage}} of {{.TotalPages}} (Total Tailed Beasts: {{.TotalTB}})</span>
+
+            {{if lt .CurrentPage .TotalPages}}
+            <a href="?page={{add .CurrentPage 1}}{{if .Query}}&search={{.Query}}{{end}}">Next &raquo;</a>
+            {{end}}
+        </div>
+    </main>
+</body>
+
+</html>
+{{end}}

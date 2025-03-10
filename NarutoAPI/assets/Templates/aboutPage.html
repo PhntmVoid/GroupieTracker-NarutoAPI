@@ -1,0 +1,101 @@
+{{define "aboutPage.html"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Database</title>
+    <link rel="stylesheet" href="/assets/CSS/main.css">
+    <link rel="stylesheet" href="/assets/CSS/about.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=search" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navdiv" id="right-header">
+            <div class="logo">
+                <a href="/"><img src="/assets/images/stickers-logo-naruto-removebg-preview.png" alt="Logo"></a>
+            </div>
+            <div>
+                <ul class="nav-buttons">
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/clans">Clans</a></li>
+                    <li><a href="/kekkei-genkai">Kekkei Genkai</a></li>
+                    <li><a href="/tailed-beasts">Tailed Beasts</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navdiv" id="left-header">
+            <div class="search-bar">
+                <form action="" method="GET">
+                    <input type="search" name="search" placeholder="Search..." value="{{.Query}}">
+                    <button type="submit" class="search-button">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="about">
+            <h1 class="center-title">À Propos du Projet</h1>
+            <div class="about-content">
+                <section>
+                    <h2>Comment ai-je décomposé le projet ? Quelles ont été les phases clés ?</h2>
+                    <p>J'ai décomposé le projet en 5 parties principales, chacune correspondant à une étape clé :</p>
+                    <ul>
+                        <li>Trouver une API qui correspond à mes centres d'intérêt et qui me motive à travailler dessus
+                            et à
+                            apprendre à l'utiliser.</li>
+                        <li>Préparer les wireframes du site afin d'avoir une idée claire de l'interface et de la
+                            navigation.
+                        </li>
+                        <li>Initialiser les pages web et m'assurer que le serveur fonctionne correctement.</li>
+                        <li>Afficher les ressources fournies par l'API (personnages, clans, Kekkei-Genkai, démons à
+                            queues).
+                        </li>
+                        <li>Ajouter les fonctionnalités demandées comme la recherche, la pagination, et les filtres.
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Répartition et organisation du travail</h2>
+                    <p>Je n'ai pas suivi de méthode spécifique pour organiser mon travail. Je me suis concentré sur les
+                        tâches qui me semblaient les plus importantes au fur et à mesure de l'avancement. Cependant, le
+                        fait
+                        d'avoir divisé le projet en 5 parties m'a permis de mieux m'y retrouver et de savoir sur quelle
+                        partie je travaillais à tout moment.</p>
+                </section>
+
+                <section>
+                    <h2>Gestion du temps et priorités</h2>
+                    <p>Dans l'ensemble, j'estime avoir bien géré mon temps. J'ai réussi à implémenter la majorité des
+                        fonctionnalités prévues. Toutefois, je n'ai pas pu finaliser le système de favoris, qui s'est
+                        révélé
+                        plus complexe que prévu. Malgré cela, les autres fonctionnalités principales (affichage des
+                        données,
+                        filtres, recherche) ont été réalisées.</p>
+                </section>
+
+                <section>
+                    <h2>Stratégie de documentation</h2>
+                    <p>Pour documenter mon travail, j'ai utilisé une méthode simple mais efficace : prendre des notes
+                        chaque
+                        fois que je faisais une avancée sur le projet. Cela m'a permis de garder une trace de mes
+                        démarches
+                        et de mes solutions, et de pouvoir m'y référer les jours suivants en cas de doute ou pour
+                        poursuivre
+                        le développement.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+{{end}}

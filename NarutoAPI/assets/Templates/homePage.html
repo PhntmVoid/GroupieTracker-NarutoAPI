@@ -1,0 +1,65 @@
+{{define "homePage.html"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Database</title>
+    <link rel="stylesheet" href="/assets/CSS/main.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=search" />
+    <style>
+        main {
+            text-align: center;
+            margin-top: 175px;
+            color: rgb(0, 0, 0);
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navdiv" id="right-header">
+            <div class="logo">
+                <a href="/"><img src="/assets/images/stickers-logo-naruto-removebg-preview.png" alt="Logo"></a>
+            </div>
+            <div>
+                <ul class="nav-buttons">
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/clans">Clans</a></li>
+                    <li><a href="/kekkei-genkai">Kekkei Genkai</a></li>
+                    <li><a href="/tailed-beasts">Tailed Beasts</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navdiv" id="left-header">
+            <div class="search-bar">
+                <form action="" method="GET">
+                    <input type="search" name="search" placeholder="Search..." value="{{.Query}}">
+                    <button type="submit" class="search-button">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Explore the World of Naruto</h2>
+        <p>Browse through our extensive database of characters, clans, kekkei genkai, and tailed beasts.</p>
+    </main>
+</body>
+
+</html>
+{{end}}

@@ -1,0 +1,344 @@
+{{define "charactersPage.html"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Characters</title>
+    <link rel="stylesheet" href="/assets/CSS/main.css">
+    <link rel="stylesheet" href="/assets/CSS/charactersCSS.css">
+    <link rel="stylesheet" href="/assets/CSS/filters.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=search" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navdiv" id="right-header">
+            <div class="logo">
+                <a href="/"><img src="/assets/images/stickers-logo-naruto-removebg-preview.png" alt="Logo"></a>
+            </div>
+            <div>
+                <ul class="nav-buttons">
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/clans">Clans</a></li>
+                    <li><a href="/kekkei-genkai">Kekkei Genkai</a></li>
+                    <li><a href="/tailed-beasts">Tailed Beasts</a></li>
+                    <li><a href="/about">About</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="navdiv" id="left-header">
+            <div class="search-bar">
+                <form action="" method="GET" id="search-form">
+                    <input type="search" name="search" placeholder="Search..." value="{{.Query}}">
+                    <button type="submit" class="search-button">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="filters-container">
+            <h2>Filter Characters</h2>
+            <form id="filters-form" method="GET" action="">
+                {{if .Query}}
+                <input type="hidden" name="search" value="{{.Query}}">
+                {{end}}
+
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="sex">Sex</label>
+                        <select name="sex" id="sex">
+                            <option value="">All</option>
+                            <option value="Male" {{if eq .Filters.sex "Male" }}selected{{end}}>Male</option>
+                            <option value="Female" {{if eq .Filters.sex "Female" }}selected{{end}}>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="bloodType">Blood Type</label>
+                        <select name="bloodType" id="bloodType">
+                            <option value="">All</option>
+                            <option value="A" {{if eq .Filters.bloodType "A" }}selected{{end}}>A</option>
+                            <option value="B" {{if eq .Filters.bloodType "B" }}selected{{end}}>B</option>
+                            <option value="AB" {{if eq .Filters.bloodType "AB" }}selected{{end}}>AB</option>
+                            <option value="O" {{if eq .Filters.bloodType "O" }}selected{{end}}>O</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="clan">Clan</label>
+                        <select name="clan" id="clan">
+                            <option value="">All</option>
+                            <option value="Aburame" {{if eq .Filters.clan "Aburame" }}selected{{end}}>Aburame</option>
+                            <option value="Akimichi" {{if eq .Filters.clan "Akimichi" }}selected{{end}}>Akimichi
+                            </option>
+                            <option value="Amagiri" {{if eq .Filters.clan "Amagiri" }}selected{{end}}>Amagiri</option>
+                            <option value="Chinoike" {{if eq .Filters.clan "Chinoike" }}selected{{end}}>Chinoike
+                            </option>
+                            <option value="Funato" {{if eq .Filters.clan "Funato" }}selected{{end}}>Funato</option>
+                            <option value="Hatake" {{if eq .Filters.clan "Hatake" }}selected{{end}}>Hatake</option>
+                            <option value="Hirasaka" {{if eq .Filters.clan "Hirasaka" }}selected{{end}}>Hirasaka
+                            </option>
+                            <option value="Hoshigaki" {{if eq .Filters.clan "Hoshigaki" }}selected{{end}}>Hoshigaki
+                            </option>
+                            <option value="Hyūga" {{if eq .Filters.clan "Hyūga" }}selected{{end}}>Hyūga</option>
+                            <option value="Hōzuki" {{if eq .Filters.clan "Hōzuki" }}selected{{end}}>Hōzuki</option>
+                            <option value="Iburi" {{if eq .Filters.clan "Iburi" }}selected{{end}}>Iburi</option>
+                            <option value="Inuzuka" {{if eq .Filters.clan "Inuzuka" }}selected{{end}}>Inuzuka</option>
+                            <option value="Izuno" {{if eq .Filters.clan "Izuno" }}selected{{end}}>Izuno</option>
+                            <option value="Kaguya" {{if eq .Filters.clan "Kaguya" }}selected{{end}}>Kaguya</option>
+                            <option value="Kamizuru" {{if eq .Filters.clan "Kamizuru" }}selected{{end}}>Kamizuru
+                            </option>
+                            <option value="Kedōin" {{if eq .Filters.clan "Kedōin" }}selected{{end}}>Kedōin</option>
+                            <option value="Karatachi Family" {{if eq .Filters.clan "Karatachi Family" }}selected{{end}}>
+                                Karatachi Family</option>
+                            </option>
+                            <option value="Kodon" {{if eq .Filters.clan "Kodon" }}selected{{end}}>Kodon</option>
+                            <option value="Kurama" {{if eq .Filters.clan "Kurama" }}selected{{end}}>Kurama</option>
+                            <option value="Nara" {{if eq .Filters.clan "Nara" }}selected{{end}}>Nara</option>
+                            <option value="Onikuma" {{if eq .Filters.clan "Onikuma" }}selected{{end}}>Onikuma</option>
+                            <option value="Ōtsutsuki" {{if eq .Filters.clan "Ōtsutsuki" }}selected{{end}}>Ōtsutsuki
+                            </option>
+                            <option value="Rinha" {{if eq .Filters.clan "Rinha" }}selected{{end}}>Rinha Clan
+                            </option>
+                            <option value="Ryū" {{if eq .Filters.clan "Ryū" }}selected{{end}}>Ryū</option>
+                            <option value="Sarutobi" {{if eq .Filters.clan "Sarutobi" }}selected{{end}}>Sarutobi
+                            </option>
+                            <option value="Sendō" {{if eq .Filters.clan "Sendō" }}selected{{end}}>Sendō</option>
+                            <option value="Senju" {{if eq .Filters.clan "Senju" }}selected{{end}}>Senju</option>
+                            <option value="Shiin" {{if eq .Filters.clan "Shiin" }}selected{{end}}>Shiin</option>
+                            <option value="Shimura" {{if eq .Filters.clan "Shimura" }}selected{{end}}>Shimura</option>
+                            <option value="Shirogane" {{if eq .Filters.clan "Shirogane" }}selected{{end}}>Shirogane
+                            </option>
+                            <option value="Tenrō" {{if eq .Filters.clan "Tenrō" }}selected{{end}}>Tenrō</option>
+                            <option value="Tsuchigumo" {{if eq .Filters.clan "Tsuchigumo" }}selected{{end}}>Tsuchigumo
+                            </option>
+                            <option value="Uchiha" {{if eq .Filters.clan "Uchiha" }}selected{{end}}>Uchiha</option>
+                            <option value="Uzumaki" {{if eq .Filters.clan "Uzumaki" }}selected{{end}}>Uzumaki</option>
+                            <option value="Yamanaka" {{if eq .Filters.clan "Yamanaka" }}selected{{end}}>Yamanaka
+                            </option>
+                            <option value="Yuki" {{if eq .Filters.clan "Yuki" }}selected{{end}}>Yuki</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="natureType">Nature Type</label>
+                        <select name="natureType" id="natureType">
+                            <option value="">All</option>
+                            <option value="Fire Release" {{if eq .Filters.natureType "Fire Release" }}selected{{end}}>
+                                Fire</option>
+                            <option value="Wind Release" {{if eq .Filters.natureType "Wind Release" }}selected{{end}}>
+                                Wind</option>
+                            <option value="Lightning Release" {{if eq .Filters.natureType "Lightning Release"
+                                }}selected{{end}}>
+                                Lightning</option>
+                            <option value="Earth Release" {{if eq .Filters.natureType "Earth Release" }}selected{{end}}>
+                                Earth</option>
+                            <option value="Water Release" {{if eq .Filters.natureType "Water Release" }}selected{{end}}>
+                                Water</option>
+                            <option value="Wood Release" {{if eq .Filters.natureType "Wood Release" }}selected{{end}}>
+                                Wood</option>
+                            <option value="Lava Release" {{if eq .Filters.natureType "Lava Release" }}selected{{end}}>
+                                Lava</option>
+                            <option value="Boil Release" {{if eq .Filters.natureType "Boil Release" }}selected{{end}}>
+                                Boil</option>
+                            <option value="Crystal Release" {{if eq .Filters.natureType "Crystal Release"
+                                }}selected{{end}}>Crystal
+                            </option>
+                            <option value="Scorch Release" {{if eq .Filters.natureType "Scorch Release"
+                                }}selected{{end}}>Scorch
+                            </option>
+                            <option value="Explosion Release" {{if eq .Filters.natureType "Explosion Release"
+                                }}selected{{end}}>
+                                Explosion</option>
+                            <option value="Magnet Release" {{if eq .Filters.natureType "Magnet Release"
+                                }}selected{{end}}>Magnet
+                            </option>
+                            <option value="Dust Release" {{if eq .Filters.natureType "Dust Release" }}selected{{end}}>
+                                Dust</option>
+                            <option value="Steel Release" {{if eq .Filters.natureType "Steel Release" }}selected{{end}}>
+                                Steel</option>
+                            <option value="Storm Release" {{if eq .Filters.natureType "Storm Release" }}selected{{end}}>
+                                Storm</option>
+                            <option value="Ice Release" {{if eq .Filters.natureType "Ice Release" }}selected{{end}}>Ice
+                            </option>
+                            <option value="Swift Release" {{if eq .Filters.natureType "Swift Release" }}selected{{end}}>
+                                Swift</option>
+                            <option value="Darkness Release" {{if eq .Filters.natureType "Darkness Release"
+                                }}selected{{end}}>Darkness
+                            </option>
+                            <option value="Typhoon Release" {{if eq .Filters.natureType "Typhoon Release"
+                                }}selected{{end}}>Typhoon
+                            </option>
+                            <option value="Yin Release" {{if eq .Filters.natureType "Yin Release" }}selected{{end}}>Yin
+                            </option>
+                            <option value="Yang Release" {{if eq .Filters.natureType "Yang Release" }}selected{{end}}>
+                                Yang</option>
+                            <option value="Yin–Yang Release" {{if eq .Filters.natureType "Yin–Yang Release"
+                                }}selected{{end}}>Yin-Yang
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="kekkeiGenkai">Kekkei Genkai</label>
+                        <select name="kekkeiGenkai" id="kekkeiGenkai">
+                            <option value="">All</option>
+                            <option value="Boil Release" {{if eq .Filters.kekkeiGenkai "Boil Release" }}selected{{end}}>
+                                Boil Release</option>
+                            <option value="Byakugan" {{if eq .Filters.kekkeiGenkai "Byakugan" }}selected{{end}}>Byakugan
+                            </option>
+                            <option value="Crystal Release" {{if eq .Filters.kekkeiGenkai "Crystal Release"
+                                }}selected{{end}}>Crystal Release</option>
+                            <option value="Explosion Release" {{if eq .Filters.kekkeiGenkai "Explosion Release"
+                                }}selected{{end}}>Explosion Release</option>
+                            <option value="Ice Release" {{if eq .Filters.kekkeiGenkai "Ice Release" }}selected{{end}}>
+                                Ice Release</option>
+                            <option value="Jōgan" {{if eq .Filters.kekkeiGenkai "Jōgan" }}selected{{end}}>Jōgan</option>
+                            <option value="Ketsuryūgan" {{if eq .Filters.kekkeiGenkai "Ketsuryūgan" }}selected{{end}}>
+                                Ketsuryūgan</option>
+                            <option value="Lava Release" {{if eq .Filters.kekkeiGenkai "Lava Release" }}selected{{end}}>
+                                Lava Release</option>
+                            <option value="Magnet Release" {{if eq .Filters.kekkeiGenkai "Magnet Release"
+                                }}selected{{end}}>Magnet Release</option>
+                            <option value="Mangekyō Sharingan" {{if eq .Filters.kekkeiGenkai "Mangekyō Sharingan"
+                                }}selected{{end}}>Mangekyō Sharingan</option>
+                            <option value="Mud" {{if eq .Filters.kekkeiGenkai "Mud" }}selected{{end}}>Mud</option>
+                            <option value="Rinnegan" {{if eq .Filters.kekkeiGenkai "Rinnegan" }}selected{{end}}>Rinnegan
+                            </option>
+                            <option value="Scorch Release" {{if eq .Filters.kekkeiGenkai "Scorch Release"
+                                }}selected{{end}}>Scorch Release</option>
+                            <option value="Senrigan" {{if eq .Filters.kekkeiGenkai "Senrigan" }}selected{{end}}>Senrigan
+                            </option>
+                            <option value="Sharingan" {{if eq .Filters.kekkeiGenkai "Sharingan" }}selected{{end}}>
+                                Sharingan</option>
+                            <option value="Shikotsumyaku" {{if eq .Filters.kekkeiGenkai "Shikotsumyaku"
+                                }}selected{{end}}>Shikotsumyaku</option>
+                            <option value="Steel Release" {{if eq .Filters.kekkeiGenkai "Steel Release"
+                                }}selected{{end}}>Steel Release</option>
+                            <option value="Storm Release" {{if eq .Filters.kekkeiGenkai "Storm Release"
+                                }}selected{{end}}>Storm Release</option>
+                            <option value="Swift Release" {{if eq .Filters.kekkeiGenkai "Swift Release"
+                                }}selected{{end}}>Swift Release</option>
+                            <option value="Tenseigan" {{if eq .Filters.kekkeiGenkai "Tenseigan" }}selected{{end}}>
+                                Tenseigan</option>
+                            <option value="Typhoon Release" {{if eq .Filters.kekkeiGenkai "Typhoon Release"
+                                }}selected{{end}}>Typhoon Release</option>
+                            <option value="Wood Release" {{if eq .Filters.kekkeiGenkai "Wood Release" }}selected{{end}}>
+                                Wood Release</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="ninjaRank">Ninja Rank</label>
+                        <select name="ninjaRank" id="ninjaRank">
+                            <option value="">All</option>
+                            <option value="Genin" {{if eq .Filters.ninjaRank "Genin" }}selected{{end}}>Genin</option>
+                            <option value="Chunin" {{if eq .Filters.ninjaRank "Chunin" }}selected{{end}}>Chunin</option>
+                            <option value="Jonin" {{if eq .Filters.ninjaRank "Jonin" }}selected{{end}}>Jonin</option>
+                            <option value="Anbu" {{if eq .Filters.ninjaRank "Anbu" }}selected{{end}}>Anbu</option>
+                            <option value="Kage" {{if eq .Filters.ninjaRank "Kage" }}selected{{end}}>Kage</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="apply-filters-btn">Apply Filters</button>
+                    <button type="button" class="reset-filters-btn" onclick="resetFilters()">Reset Filters</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="characters-grid">
+            {{range .Characters}}
+            <div class="character-card">
+                <h2>{{.Name}}</h2>
+                {{if .Images}}
+                <img src="{{index .Images 0}}" alt="{{.Name}}" class="character-image">
+                {{end}}
+
+                <div class="character-info">
+                    {{if .Personal.Sex}}
+                    <p><strong>Sex:</strong> {{.Personal.Sex}}</p>
+                    {{end}}
+
+                    {{if .Personal.Birthdate}}
+                    <p><strong>Birthdate:</strong> {{.Personal.Birthdate}}</p>
+                    {{end}}
+
+                    {{if .Personal.BloodType}}
+                    <p><strong>Blood Type:</strong> {{.Personal.BloodType}}</p>
+                    {{end}}
+
+                    {{if .Personal.Clan}}
+                    <p><strong>Clan:</strong>
+                        {{if eq (printf "%T" .Personal.Clan) "string"}}
+                        {{.Personal.Clan}}
+                        {{else}}
+                        {{range .Personal.Clan}}{{.}} {{end}}
+                        {{end}}
+                    </p>
+                    {{end}}
+
+                    {{if .NatureType}}
+                    <p><strong>Nature Types:</strong> {{range .NatureType}}{{.}}, {{end}}</p>
+                    {{end}}
+
+                    {{if .Personal.KekkeiGenkai}}
+                    <p><strong>Kekkei Genkai:</strong>
+                        {{if eq (printf "%T" .Personal.KekkeiGenkai) "string"}}
+                        {{.Personal.KekkeiGenkai}}
+                        {{else}}
+                        {{range .Personal.KekkeiGenkai}}{{.}}, {{end}}
+                        {{end}}
+                    </p>
+                    {{end}}
+
+                    {{if .Rank.NinjaRank.PartI}}
+                    <p><strong>Ninja Rank:</strong> {{.Rank.NinjaRank.PartI}}</p>
+                    {{end}}
+
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+        <div class="pagination">
+            {{if gt .CurrentPage 1}}
+            <a
+                href="?page={{subtract .CurrentPage 1}}{{range $key, $value := .Filters}}{{if $value}}&{{$key}}={{$value}}{{end}}{{end}}{{if .Query}}&search={{.Query}}{{end}}">&laquo;
+                Previous</a>
+            {{end}}
+
+            <span>Page {{.CurrentPage}} of {{.TotalPages}} (Total Characters: {{.TotalCharacters}})</span>
+
+            {{if lt .CurrentPage .TotalPages}}
+            <a
+                href="?page={{add .CurrentPage 1}}{{range $key, $value := .Filters}}{{if $value}}&{{$key}}={{$value}}{{end}}{{end}}{{if .Query}}&search={{.Query}}{{end}}">Next
+                &raquo;</a>
+            {{end}}
+        </div>
+    </main>
+
+    <script>
+        function resetFilters() {
+            const searchParams = new URLSearchParams(window.location.search);
+            const searchQuery = searchParams.get('search');
+
+            if (searchQuery) {
+                window.location.href = '?search=' + encodeURIComponent(searchQuery);
+            } else {
+                window.location.href = '?';
+            }
+        }
+    </script>
+</body>
+
+</html>
+{{end}}

@@ -1,0 +1,13 @@
+.clans-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.clan-card {
+    text-align: center;
+}
+
+.clan-card h2 {
+    color: #043e8b;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}

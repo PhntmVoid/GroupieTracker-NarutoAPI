@@ -1,0 +1,46 @@
+.tb-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.tb-card h2 {
+    color: #043e8b;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.tb-image {
+    width: 240px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.tb-info strong {
+    display: inline-block;
+    width: 120px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .characters-grid,
+    .tb-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .tb-info strong {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .characters-grid,
+    .clans-grid,
+    .kg-grid,
+    .tb-grid {
+        grid-template-columns: 1fr;
+    }
+}

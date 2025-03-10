@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/assets/images/BEAUTIFUL-PC-WALLPAPER-4K-MOUNTAIN-LANDSCAPE-1024x574.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a img {
+    height: 100px;
+    width: 150px;
+}
+
+.nav-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-buttons li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav-buttons li a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+}
+
+.nav-buttons li a:hover {
+    color: #ffcc00;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: white;
+}
+
+.search-button:hover {
+    color: #ffcc00;
+}
+
+.character-card,
+.clan-card,
+.kg-card,
+.tb-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover,
+.clan-card:hover,
+.kg-card:hover,
+.tb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.characters-grid,
+.clans-grid,
+.kg-grid,
+.tb-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.character-info,
+.clan-info,
+.kg-info,
+.tb-info {
+    color: #333;
+}
+
+.character-info p,
+.clan-info p,
+.kg-info p,
+.tb-info p {
+    margin: 8px 0;
+}
+
+.character-info strong,
+.clan-info strong,
+.kg-info strong,
+.tb-info strong {
+    color: #043e8b;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    margin: 0 4px;
+    background-color: #043e8b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #032a5d;
+}
+
+.pagination span {
+    margin: 0 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .search-bar input {
+        width: 200px;
+    }
+
+    .nav-buttons li a {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navdiv {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .search-bar input {
+        width: 150px;
+    }
+
+    .pagination a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
