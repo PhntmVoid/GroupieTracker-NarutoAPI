@@ -70,5 +70,5 @@ Commencez par télécharger une copie locale du projet :
 ```bash
 git clone https://github.com/PhntmVoid/GroupieTracker.git 
 ```
-Et ecris ```go run . ``` dans le terminal (vous devez vérifier que vous êtes dans le fichier où se trouve le projet).
+Et ecris ```go run .``` dans le terminal (vous devez vérifier que vous êtes dans le fichier où se trouve le projet).
 
