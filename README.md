@@ -1,6 +1,6 @@
 # 🌌 Naruto Data Explorer — GroupieTracker  
 
-Bienvenue sur **GroupieTracker**, un projet web inspiré de la célèbre série anime/manga **Naruto**. Développée en **Go (Golang)**, cette application permet aux fans d'**explorer, rechercher et découvrir** l'univers de Naruto grâce à une API dédiée.  
+Bienvenue sur **Naruto API Explorer**, un projet web inspiré de la célèbre série anime/manga **Naruto**. Développée en **Go (Golang)**, cette application permet aux fans d'**explorer, rechercher et découvrir** l'univers de Naruto grâce à une API dédiée.  
 
 Toutes les données sont récupérées dynamiquement depuis l'API [Dattebayo](https://api-dattebayo.vercel.app/).  
 
