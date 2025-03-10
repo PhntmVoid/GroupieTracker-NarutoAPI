@@ -68,7 +68,7 @@ Apprenez-en plus sur les **démons à queues**, créatures mythiques qui influen
 Commencez par télécharger une copie locale du projet :  
 
 ```bash
-git clone https://github.com/PhntmVoid/GroupieTracker.git 
+git clone https://github.com/PhntmVoid/GroupieTracker-NarutoAPI.git 
 ```
 Et ecris ```go run .``` dans le terminal (vous devez vérifier que vous êtes dans le fichier où se trouve le projet).
 
